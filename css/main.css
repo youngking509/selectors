@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Inknut+Antiqua&display=swap');
+
+html{
+    background-color:#ccc;
+}
+
+body {
+    font-family:Arial,sans-serif;
+    background-color:#fff;
+    max-width:960px;
+    width:90%;
+    margin:auto;
+    padding:1%;
+}
+
+h1.page-header{
+    font-family:'Inknut Antiqua',serif;
+    width:80%;
+    margin:auto;
+    text-align:center;
+    text-shadow: 4px 4px 4px #aaa;
+}
+
+/* start nav rules */
+nav{
+    text-align:center; /* centers the nav */
+}
+
+nav a{
+    color:#000;
+}
+
+nav ul {
+    list-style:none; /* removes the bullets */
+}
+nav li
+{
+    display:inline-block; /* makes horizontal, but able to declare margins */
+    margin:0 2%; /* margin left-right, gets smaller as necessary */
+}
+nav a:hover{
+    text-decoration: none;
+}
+/* end nav rules */	
+
+
+footer.page-footer{
+    clear:both;
+    text-align:center;
+}
+
+legend{
+    font-weight: bold;
+    font-size:x-large;
+}
