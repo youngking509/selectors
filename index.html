@@ -1,58 +1,194 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <meta name="robots" content="noindex,nofollow">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>CSS Selectors by NAME HERE</title>
-        <link href="css/pre.css" rel="stylesheet">
-        <link href="css/main.css" rel="stylesheet">
-        <style>
-            div#id-div{
-                background-color:yellow;
-            }
-        </style>
-    </head>
-    <body>
-        <header>
-            
-            <h1 class="page-header">CSS Selectors by NAME HERE</h1>
-            
+
+<head>
+    <meta charset="utf-8">
+    <meta name="robots" content="noindex,nofollow">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>CSS Selectors</title>
+    <link href="css/pre.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+    <style>
+        div#id-div {
+            background-color: yellow;
+
+        }
+
+        li.my-list {
+            background-color: orange;
+        }
+
+        div#new-div,
+        li.new-list {
+            background-color: blue;
+        }
+
+
+        ul.my-kids>li {
+            background-color: rgb(88, 158, 18);
+        }
+
+        div.grandkids li {
+            background-color: red;
+        }
+
+        .add-border {
+            border: 1px solid #000;
+            background-color: gold;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <h1 class="page-header">CSS Selectors</h1>
+
         <nav>
             <ul>
                 <li><a href="#id">id</a></li>
                 <li><a href="#class">class</a></li>
                 <li><a href="#compound">compound</a></li>
+                <li><a href="#child">child</a></li>
+                <li><a href="#descendant">decendant</a></li>
+                <li><a href="#multiple">multiple classes</a></li>
             </ul>
-        </nav> 
-    </header>           
-        <p>This page demonstrates how CSS selectors work.</p>
+        </nav>
+    </header>
+    <p>This page demonstrates how CSS selectors work.</p>
 
-        <fieldset>
-            <legend><a id="id">id</a></legend>
-            <p>ids can be applied to only one item on a page</p>
-            <p>Here's how we hook an id attribute to an element:</p>
-            <pre><code>id="id-div"</code></pre>
-            <p>Here's how the CSS is applied to the element:</p>
-            <pre><code>div#id-div{
+    <fieldset>
+        <legend><a id="id">id</a></legend>
+        <p>ids can be applied to only one item on a page</p>
+        <p>Here's how we hook an id attribute to an element:</p>
+        <pre><code>id="id-div"</code></pre>
+        <p>Here's how the CSS is applied to the element:</p>
+        <pre><code>div#id-div{
     background-color:yellow;
 }</code></pre>
 
+        <p>Here's what it looks like:</p>
+        <div id="id-div">Inside my-div</div>
+    </fieldset>
 
-            <p>Here's what it looks like:</p>
-            <div id="id-div">Inside my-div</div>
-        </fieldset>
+    <fieldset>
+        <legend><a id="class">class</a></legend>
+        <p>classes can be applied more than one item on a page</p>
+        <p>Here's how we hook a class attribute to an element:</p>
+        <pre><code>class="my-list"</code></pre>
+        <p>Here's how the CSS is applied to the element:</p>
+        <pre><code>li.my-list{
+    background-color:blue;
+}</code></pre>
 
-        <footer class="page-footer">
-            <p><small>&copy; 2023 by 
-                NAME HERE, All Rights Reserved ~ 
-                <a id="html-checker" href="#" target="_blank">Check HTML</a> ~ 
+
+        <p>Here's what it looks like:</p>
+        <div>
+            <ul>
+                <li class="my-list">Im in an li with a class named my-list</li>
+                <li class="my-list">Im in an li with a class named my-list</li>
+                <li class="my-list">Im in an li with a class named my-list</li>
+            </ul>
+        </div>
+    </fieldset>
+
+
+    <fieldset>
+        <legend><a id="compound">compound</a></legend>
+        <p>A compound selector allows multiple selectors separated by commas. In this way this allows us to apply the
+            same rules for several selectors.</p>
+        <p>Here's how the CSS is applied to the element:</p>
+        <pre><code>div#new-div,li.new-list{
+    background-color:blue;
+}</code></pre>
+
+
+        <p>Here's what it looks like:</p>
+        <div>
+            <ul>
+                <li class="new-list">Im in an li with a class named new-list</li>
+                <li class="new-list">Im in an li with a class named new-list</li>
+                <li class="new-list">Im in an li with a class named new-list</li>
+            </ul>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend><a id="child">child</a></legend>
+        <p>A child selector allows us to access the next immediate elements inside the current element.</p>
+        <p>Here's how the CSS is applied to the element:</p>
+        <pre><code>ul.my-kids > li{
+    background-color:green;
+}</code></pre>
+
+
+        <p>Here's what it looks like:</p>
+        <div>
+            <ul class="my-kids">
+                <li>Im in an li inside a ul with a class of my-kids</li>
+                <li>Im in an li inside a ul with a class of my-kids</li>
+                <li>Im in an li inside a ul with a class of my-kids</li>
+            </ul>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend><a id="decendant">decendant</a></legend>
+        <p>Using a descendant selector we can acess all elements at any depth within the current element.</p>
+        <p>Here's how the CSS is applied to the element:</p>
+        <pre><code>div.grandkids li {
+    background-color:red;
+}</code></pre>
+
+
+        <p>Here's what it looks like:</p>
+        <div class="grandkids">
+            <ul>
+                <li>Im in an li inside a ul with a class of my-kids</li>
+                <li>Im in an li inside a ul with a class of my-kids</li>
+                <li>Im in an li inside a ul with a class of my-kids</li>
+            </ul>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend><a id="multiple">multiple class</a></legend>
+        <p>We can apply multiple classes to an element by lacing class names separated by spaces in the class attribute.
+        </p>
+        <p>Here's how we hook multiple classes to an element:</p>
+        <pre><code>class="add-border add-background"</code></pre>
+        <p>Here's how the CSS is applied to the element:</p>
+        <pre><code>.add-border{
+    border:1px solid #000;            
+}
+.add-background{
+    background-color:gold;
+}
+</code></pre>
+
+
+        <p>Here's what it looks like:</p>
+        <div>
+            <ul>
+                <li class="add-border add-background">Im in an li that has 2 classes</li>
+                <li class="add-border add-background">Im in an li that has 2 classes</li>
+                <li class="add-border add-background">Im in an li that has 2 classes</li>
+            </ul>
+        </div>
+    </fieldset>
+
+    <footer class="page-footer">
+        <p><small>&copy; 2023 by
+                NAME HERE, All Rights Reserved ~
+                <a id="html-checker" href="#" target="_blank">Check HTML</a> ~
                 <a id="css-checker" href="#" target="_blank">Check CSS</a></small>
-           </p>
-          </footer>
-        <script>
-            document.getElementById("html-checker").setAttribute("href","https://validator.w3.org/nu/?doc=" + location.href);
-            document.getElementById("css-checker").setAttribute("href","https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);  
-        </script>
-    </body>
+        </p>
+    </footer>
+    <script>
+        document.getElementById("html-checker").setAttribute("href", "https://validator.w3.org/nu/?doc=" + location.href);
+        document.getElementById("css-checker").setAttribute("href", "https://jigsaw.w3.org/css-validator/validator?uri=" + location.href);  
+    </script>
+</body>
+
 </html>
